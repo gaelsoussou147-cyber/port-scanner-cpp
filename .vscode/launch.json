@@ -1,0 +1,74 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "name": "Python : fichier actif",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Python : main.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "C/C++ : compiler et déboguer le fichier actif (lldb)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "build: fichier actif (C/C++)"
+    },
+    {
+      "name": "C++ : déboguer Gael (lldb)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/Gael",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build: Gael.cpp"
+    },
+    {
+      "name": "C++ : déboguer Main (lldb)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/Main",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build: Main.c++"
+    },
+    {
+      "name": "LLDB : attacher à un processus",
+      "type": "lldb",
+      "request": "attach",
+      "pid": "${command:pickMyProcess}"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/networks/mon_programme1",
+      "program": "/home/networks/mon_programme1/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build: fichier actif (C/C++)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-c",
+        "if [[ \"${file}\" == *.c ]]; then gcc -g -Wall -Wextra \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}\"; else g++ -g -Wall -Wextra \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}\"; fi"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "build: Gael.cpp",
+      "type": "shell",
+      "command": "g++",
+      "args": ["-g", "-Wall", "-Wextra", "${workspaceFolder}/Gael.cpp", "-o", "${workspaceFolder}/Gael"],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "build: Main.c++",
+      "type": "shell",
+      "command": "g++",
+      "args": ["-g", "-Wall", "-Wextra", "${workspaceFolder}/Main.c++", "-o", "${workspaceFolder}/Main"],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
